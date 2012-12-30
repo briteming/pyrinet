@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block nav %}login{% endblock %}
+
+{%block head%}
+    {{static.css('login.css')}}
+{%endblock%}
+
+{% block main %}
+<div id="login">
+    <form action="{{url_for('user.login')}}" method="POST" class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <fieldset>
+        {% if error%}
+        <div class="control-group error">
+            <label class="control-label">Error: </label>
+                <div class="controls">
+                    <span class="help-inline">
+                        {{error}}
+                    </span>
+                </div>
+        </div>
+        {% endif %}
+        <div class="control-group{% if form.username.errors %} error{% endif %}">
+            <div class="controls">
+                <input id="username" name="username" type="text" class="input-block-level"
+                    value="{{form.username.data or ''}}" placeholder="Username">
+                {% if form.username.errors %}
+                <span class="help-inline">
+                    {{form.username.errors|join(',')}}
+                </span>
+                {% endif %}
+            </div>
+        </div>
+        <div class="control-group{% if form.password.errors %} error{% endif %}">
+            <div class="controls">
+                <input id="password" name="password" type="password" class="input-block-level"
+                    value="{{form.password.data or ''}}" placeholder="Password">
+                {% if form.password.errors %}
+                <span class="help-inline">
+                    {{form.password.errors|join(',')}}
+                </span>
+                {% endif %}
+            </div>
+        </div>
+        <div class="pull-right">
+            <button type="submit" class="btn btn-primary btn-large">Login</button>
+        </div>
+        </fieldset>
+    </form>
+
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{%block head%}
+    {{static.css('main.css')}}
+    {{static.js('redirector.js')}}
+{%endblock%}
+
+{% block main %}
+<div id="main">
+    <h2>Add new redirector</h2>
+    <form class="inline">
+        <select id="protocol">
+            <option value="tcp">TCP</option>
+            <option value="udp">UDP</option>
+        </select>
+        <div class="addr-group">
+            <input type="text" id="local_ip" class="addr"
+                placeholder="local ip"
+            ><input type="text" id="local_port" class="port" placeholder="port">
+        </div>
+        <div class="addr-group">
+            <input type="text" id="remote_ip" class="addr"
+                placeholder="remote ip"
+            ><input type="text" id="remote_port" class="port" placeholder="port">
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="add();return false;">Add</button>
+    </form>
+    <h2>Reedirectors</h2>
+    <table class="table table-bordered table-condensed" id="redirectors">
+        <thead>
+            <tr><td>Protocol</td><td>Local</td><td>Remote</td><td>Enabled</td><td>Action</td></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    var add_url = '{{url_for('redirector.add')}}';
+    var list_url = '{{url_for('redirector.list')}}';
+    var enable_url = '{{url_for('redirector.enable')}}';
+    var disable_url = '{{url_for('redirector.disable')}}';
+    var remove_url = '{{url_for('redirector.remove')}}';
+</script>
+{% endblock %}

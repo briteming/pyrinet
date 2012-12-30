@@ -1,0 +1,60 @@
+
+#main {
+    margin: 20px 100px;
+    padding: 20px;
+}
+
+#main form {
+    padding: 10px;
+    padding-bottom: 0;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+       -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+#protocol {
+    width: 80px;
+}
+
+#main .addr {
+    width: 110px;
+    -webkit-border-radius: 4px 0 0 4px;
+       -moz-border-radius: 4px 0 0 4px;
+            border-radius: 4px 0 0 4px;
+    border-width: 1px 0 1px 1px;
+}
+
+#main .port {
+    width: 42px;
+    -webkit-border-radius: 0 4px 4px 0;
+       -moz-border-radius: 0 4px 4px 0;
+            border-radius: 0 4px 4px 0;
+    border-width: 1px 1px 1px 0;
+}
+
+.addr-group {
+    display: inline-block;
+    word-spacing: 0;
+}
+
+.addr-group span {
+    display: inline-block;
+}
+
+#main form button {
+    margin-bottom: 10px;
+}
+
+#redirectors {
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+       -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
