@@ -17,7 +17,8 @@ def list():
 def add():
     form = forms.AddForm(request.form)
     if form.validate():
-        if Redirector.filter(protocol=form.protocol.data,
+        if Redirector.filter(protocol=(
+                Redirector.TCP if form.protocol.data else Redirector.UDP),
                 local_ip=form.local_ip.data,
                 local_port=form.local_port.data).count():
             return jsonify(ok=False, error='duplicated')
